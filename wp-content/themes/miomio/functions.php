@@ -1,6 +1,7 @@
 <?php
 define('TALK_PATH_URL', get_template_directory_uri()); // logical location for LF framework
- define('DEFAUL_THUMNAIL', TALK_PATH_URL . '/img/default-thumbnail.jpg');
+define('DEFAUL_THUMNAIL', TALK_PATH_URL . '/img/default-thumbnail.jpg');
+define('EXCERPT_LENGTH', 28);
 /*
 *Add ReduxFramework.
 */
@@ -11,6 +12,10 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/framework/sam
     require_once( dirname( __FILE__ ) . '/framework/sample/barebones-config.php' );
 }
 
+function custom_excerpt_length( $length ) {
+    return EXCERPT_LENGTH;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /**
  * Set title for page

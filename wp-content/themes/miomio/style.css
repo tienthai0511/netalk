@@ -11,16 +11,16 @@ Tags: free, theme
 Text Domain: miomio
 */
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background: #F1F1F1;
+    font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
     height: auto;
+    color:#1e1e1e;
 }
 
 ul {
     list-style: none;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: Helmet,Freesans,Helvetica,Arial,sans-serif;
 }
 button, .button {
     background-color: #672d82;
@@ -116,7 +116,6 @@ input[type="submit"]:hover {
 
 article.feed-item .row {
     background: #fff;
-    margin-bottom: 1em;
 }
 
 article.feed-item h2 {
@@ -177,7 +176,7 @@ article.feed-item .feed-img:hover {
     float: left;
     color: #9C9C9C;
     padding: 0 0.4em;
-    border-left: .063em solid #DADADA;
+    border-left: 1px solid #DADADA;
     line-height: 1em;
 }
 
@@ -630,3 +629,58 @@ aside .side-item img {
 .wp-caption{
   width: auto !important;
 }
+.icon-bg{
+  background: url("img/news--icons-sprite.png") no-repeat;
+}
+.icon-time{
+  background-position:left -4012px;
+  padding-left: 30px !important;
+  margin-left: -10px;
+  padding-left: 28px;
+  
+}
+
+.post-meta{
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 20px
+}
+.f-13{
+  font-size: 13px !important;
+}
+.post-meta p.author{
+  color: #404040;
+  display: inline-block;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+.simplesocialbuttons{
+  margin-bottom: 30px !important;
+}
+.related-post{
+  border-top:8px solid #dcdcdc;
+}
+.related-post h3{
+  font-weight: 600;
+  color:#404040;
+  margin-bottom: 30px;
+  }
+
+.cat-txt a{
+  color:#cc0101 !important;
+}
+.cat-txt a:hover{
+  color:#1167a8 !important;
+}
+
+/* item related */
+.item-relate{
+  width: 200px;
+  display: inline-block;;
+  float: left;
+  max-height: 200px; 
+ overflow: hidden;
+}
+.item-relate img{
+  transition: all .3s ease-in-out;
+}
+.item-relate img:hover { transform: scale(1.1); }

@@ -81,7 +81,7 @@
 			<div class="related-post">
 				<div class="row">
 				<div class="small-12 columns">
-					<h3>Related</h3>
+					<h3>Related Articles</h3>
 					<ul>
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 						<?php
