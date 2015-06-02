@@ -1,7 +1,15 @@
 <?php
 define('TALK_PATH_URL', get_template_directory_uri()); // logical location for LF framework
 define('DEFAUL_THUMNAIL', TALK_PATH_URL . '/img/default-thumbnail.jpg');
+define('TALK_PATH_SER', get_template_directory()); // Physical location for LF framework
 define('EXCERPT_LENGTH', 28);
+
+//include custom widget
+foreach (glob(TALK_PATH_SER . '/framework/widgets/*.php') as $filename ) {
+	include $filename;
+}
+
+
 /*
 *Add ReduxFramework.
 */

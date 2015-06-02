@@ -17,7 +17,22 @@
 
 
 				endwhile;
-			?>
+				$prev_post = get_previous_post();
+				$next_post = get_next_post();
+				?>
+				<div class="ct-post-nav">
+				<?php if (!empty( $prev_post )): ?>
+				<div class="ct-post-prev">
+					<strong>Previous:</strong><br> <a href="<?php echo get_permalink( $prev_post->ID ); ?>" rel="prev"><?php echo $prev_post->post_title; ?></a>  
+				</div>
+				<?php endif; ?>
+				<?php if ( is_a( $next_post , 'WP_Post' ) ) : ?>
+				<div class="ct-post-next">
+					<strong>Next:</strong><br> <a href="<?php echo get_permalink( $next_post->ID ); ?>" rel="next"><?php echo get_the_title( $next_post->ID ); ?></a>  
+				</div>
+				<?php endif; ?>
+				<div class="clr"></div>
+			</div>
 			<?php
 			$post_id = $post->ID;
 			//get related faq post in metabox
@@ -82,7 +97,7 @@
 				<div class="row">
 				<div class="small-12 columns">
 					<h3>Related Articles</h3>
-					<ul>
+					<ul style="margin-left:0">
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 						<?php
 							$thumbnail_id = get_post_thumbnail_id();
@@ -90,7 +105,7 @@
 							$thumbnail_img = (!empty($thumbnail)) ? $thumbnail[0] : DEFAUL_THUMNAIL;
 						?>
 						<li class="item-relate">
-							<a href="<?php echo get_permalink(); ?>"><img src="<?php echo $thumbnail_img ;?>" alt="<?php the_title();?>"  width="100" height="150">
+							<a href="<?php echo get_permalink(); ?>"><img src="<?php echo $thumbnail_img ;?> " width="300" height="162" alt="<?php the_title();?>"  >
 							<p class="text-related"><?php the_title();?></p>
 							</a>
 						</li>
