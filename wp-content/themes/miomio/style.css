@@ -740,9 +740,9 @@ aside .side-item img {
   background: rgba(255,255,255,0.97);
 }
 .bar-main ul  li a:hover,.set_tag{
-  color: #468c54;
+  color: #468c54!important;
   border-color: #a9d8b2 !important;
-  background: rgba(87,173,104,0.1) !important;;
+  background: rgba(87,173,104,0.1) !important;
  }
  /*next -post*/
 .ct-post-nav {
