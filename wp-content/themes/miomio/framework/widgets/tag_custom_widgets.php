@@ -44,11 +44,19 @@ class Tag_Custom_Widget extends WP_Widget {
 		$ouput_tag = $tag_html = '';
 		$head_html = '<div class="bar-main">';
 		$head_html .= '<h3> ' . __('Tag', 'talk'). '</h3>';
-		
-		if(get_the_tag_list()) {
-			$tag_html .= get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
+		$tags = get_tags();
+		$keyword = get_search_query();
+		 $id_tag = ( '' !== get_query_var('tag_id')) ? get_query_var('tag_id') : ''; 
+		$html_tag = '<ul>';
+		foreach ( $tags as $tag ) {
+			$tag_link = get_tag_link( $tag->term_id );
+			$class = ( $id_tag != $tag->term_id) ? : 'set_tag';
+			$html_tag .= "<li><a class='{$class}' href='{$tag_link}' title='{$tag->name}'>";
+			$html_tag .= "{$tag->name}</a></li>";
 		}
-		$head_html .= $tag_html . '<div>';
+		$html_tag .= '</ul>';
+
+		$head_html .= $html_tag . '<div>';
 		echo $head_html;
 
 		/* After widget */
